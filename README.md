@@ -30,7 +30,7 @@ cd {{ThemeNameHere}}
 3. Clone this repo contents into the folder.
 
 `
-sudo git clone https://github.com/thedonquixotic/Plymouth-Animated-Boot-Screen-Creator.git .
+sudo git clone https://github.com/lockntross/Plymouth-Animated-Boot-Screen-Creator.git .
 `
 The dot at the end will clone the contents of the template folder into your new theme folder. 
 
