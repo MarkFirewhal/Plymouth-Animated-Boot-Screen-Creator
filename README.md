@@ -107,10 +107,12 @@ systemctl enable gdm-plymouth.service
 
 
 ### Credits
+
+Mp4 recorded with: https://github.com/NickeManarin/ScreenToGif
+
 Original repo by Eionix: https://github.com/krishnan793/PlymouthTheme-Cat/commits?author=krishnan793
 
 [![Video](https://i.imgur.com/0ReRjOf.gif)](https://www.youtube.com/watch?v=c6f478VBhtE)
-
 
 [Video] https://www.youtube.com/watch?v=c6f478VBhtE
 
