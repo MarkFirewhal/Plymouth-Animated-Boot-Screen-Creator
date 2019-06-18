@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=laptop
+Description=laptop
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/laptop/
+ScriptFile=/usr/share/plymouth/themes/laptop/animated-boot.script
