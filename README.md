@@ -1,6 +1,6 @@
 # Animated Boot Screen Shell Script
 
-This is a template built off of Eonix's animated cat plymouth theme. I just wrote some scripts to make it easier to make your own. 
+This is a template built off of Eonix's animated cat plymouth theme. I modified some of jcklpe's scripts and added a new Plymouth theme for my laptop.  
 
 
 ## Instructions 
@@ -36,10 +36,10 @@ The dot at the end will clone the contents of the template folder into your new 
 
 ### Customization
 
-1. Put mp4 or gif into the "input" folder. 
-2. Run the correct .sh file for the file type you are using. 
+1. Put mp4 into the "input" folder. 
+2. Run the mp4-to-png.sh file for the filename you are using. 
 3. Transfer the image sequence to the root of the project folder.
-4. Open up template.script and change the lines:
+4. Open up animated-boot.script and change the lines:
 ```
 for (i = 0; i < {{NUMBER OF IMAGES IN SEQUENCE}}; i++)
   flyingman_image[i] = Image("progress-" + i + ".png");
@@ -51,8 +51,8 @@ flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 3) % {{NUMBER OF I
 ```
 To have the correct number of images in the sequence. 
 
-5. Resave the template.script file as "animated-boot.script". 
-6. Open up template.plymouth and enter in your name, descriptions, and new script paths etc and save as {{ThemeNameHere}}.plymouth
+5. Resave the animated-boot.script file. 
+6. Open up laptop.plymouth and enter in your name, descriptions, and new script paths etc and save as {{ThemeNameHere}}.plymouth
 
 ### Installation
 1. Install the theme using this script, be sure to replace the template variables used:
@@ -62,7 +62,7 @@ To have the correct number of images in the sequence.
 ```
 In my case it looks like this:
 ```
-sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/slash/slash.plymouth 100
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/laptop/laptop.plymouth 100
 ```
 
 2. Select the default theme.
@@ -109,11 +109,11 @@ systemctl enable gdm-plymouth.service
 ### Credits
 Original repo by Eionix: https://github.com/krishnan793/PlymouthTheme-Cat/commits?author=krishnan793
 
-[![Video](https://4.bp.blogspot.com/-gG0MBGjEE9M/WBYXrOGrVGI/AAAAAAAABVE/auGpLRYf7jor4hu3jurYGcjaVBapHyAVACLcB/s320/8998adc40112985a8f29cf414925d390.gif)](https://www.youtube.com/watch?v=c6f478VBhtE)
+[![Video](https://i.imgur.com/0ReRjOf.gif)](https://www.youtube.com/watch?v=c6f478VBhtE)
 
 
 [Video] https://www.youtube.com/watch?v=c6f478VBhtE
 
 [Blog] http://eionix.blogspot.in/2016/10/plymouth-theme-for-ubuntu.html
 
-And if you want to check out my blog for more creative coding and unix customization stuff, check out https://www.jackalope.tech/blog
+And if you want to check out m jcklpe's stuff, visit https://www.jackalope.tech/blog
