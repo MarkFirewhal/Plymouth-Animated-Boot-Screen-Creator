@@ -106,7 +106,10 @@ systemctl enable gdm-plymouth.service
 
 ### Additional Notes
 Plymouth can be opened in Linux MX with:
+`
 sudo mx-boot-options
+`
+
 
 ### Credits
 
