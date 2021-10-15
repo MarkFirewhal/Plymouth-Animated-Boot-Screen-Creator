@@ -84,6 +84,8 @@ sudo update-initramfs -u
 `
 sudo nano /etc/default/grub
 `
+
+
 Find the line: "GRUB_CMDLINE_LINUX_DEFAULT" = add the following: `quiet splash`
 
 NEXT,
