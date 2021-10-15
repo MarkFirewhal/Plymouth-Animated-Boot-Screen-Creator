@@ -187,4 +187,4 @@ Original repo by Eionix: https://github.com/krishnan793/PlymouthTheme-Cat/commit
 
 And if you want to check out m jcklpe's stuff, visit https://www.jackalope.tech/blog
 
-![Bootscreen with LUKS](https://i.imgur.com/Jvb0puw.png)
+![Bootscreen with LUKS](https://i.imgur.com/Jvb0puw.png?1)
