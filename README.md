@@ -49,7 +49,12 @@ sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth d
 
 2. Select the default theme.
 `sudo update-alternatives --config default.plymouth`
-If nothing appears, you're done. But if you see a list of themes, select the number for your theme (I can't say this for sure but if the theme you want is under 0 for the auto mode, then I would select that as I think it boots in faster than manual). Be sure to adjust the priority in the command above (100) to something larger than the other themes so auto can take over. Or not, whatever. 
+If nothing appears, you're done. 
+
+But if you see a list of themes, select the number for your theme. 
+Be sure to adjust the priority in the command above (100) to something larger than the other themes so auto can take over. Or not, whatever. 
+
+2.5 Double check that theme install.
 If you need to search the list of themes, just to be sure, before you commit... use:
 `
 plymouth-set-default-theme -l
@@ -69,7 +74,26 @@ sudo nano /usr/share/plymouth/plymouthd.defaults
 sudo update-initramfs -u
 `
 
-4. Now reboot.
+4. Modify Grub.
+
+`
+sudo nano /etc/default/grub
+`
+Find the line: "GRUB_CMDLINE_LINUX_DEFAULT" = add the following: `quiet splash break=init`
+NEXT,
+Find the line: "GRUB_GFXMODE" = change it to the following: `1024x768` (or whatever your native screen resolution is)
+
+`
+sudo update-grub2
+`
+
+(NOTE): if you're having trouble with grub at all, install the GUI: 
+`
+sudo apt install grub-customizer
+`
+
+
+5. Now reboot.
 
 If you want to install this on < Ubuntu 16.04, change the path from /usr/share/plymouth to /lib/plymouth/ . You need to do this on the laptop.plymouth file also.
 
