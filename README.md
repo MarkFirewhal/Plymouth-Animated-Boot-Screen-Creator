@@ -85,7 +85,9 @@ sudo update-initramfs -u
 sudo nano /etc/default/grub
 `
 Find the line: "GRUB_CMDLINE_LINUX_DEFAULT" = add the following: `quiet splash break=init`
+
 NEXT,
+
 Find the line: "GRUB_GFXMODE" = change it to the following: `1024x768` (or whatever your native screen resolution is)
 
 `
