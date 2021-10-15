@@ -2,6 +2,8 @@
 
 This is a template built off of Eonix's animated cat plymouth theme. I modified some of jcklpe's scripts and added a new Plymouth theme for my laptop.  
 
+![Bootscreen](https://i.imgur.com/0ReRjOf.gif)
+
 
 ## Instructions 
 
@@ -30,32 +32,12 @@ cd {{ThemeNameHere}}
 3. Clone this repo contents into the folder.
 
 `
-sudo git clone https://github.com/lockntross/Plymouth-Animated-Boot-Screen-Creator.git .
+sudo git clone https://github.com/MarkFirewhal/Plymouth-Animated-Boot-Screen-Creator.git .
 `
 The dot at the end will clone the contents of the template folder into your new theme folder. 
 
-### Customization
-
-1. Put mp4 into the "input" folder. 
-2. Run the mp4-to-png.sh file for the filename you are using. 
-3. Transfer the image sequence to the root of the project folder.
-4. Open up animated-boot.script and change the lines:
-```
-for (i = 0; i < {{NUMBER OF IMAGES IN SEQUENCE}}; i++)
-  flyingman_image[i] = Image("progress-" + i + ".png");
-flyingman_sprite = Sprite();
-```
-and 
-```
-flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 3) % {{NUMBER OF IMAGES}}]);
-```
-To have the correct number of images in the sequence. 
-
-5. Resave the animated-boot.script file. 
-6. Open up laptop.plymouth and enter in your name, descriptions, and new script paths etc and save as {{ThemeNameHere}}.plymouth
-
 ### Installation
-1. Install the theme using this script, be sure to replace the template variables used:
+1. Install the theme by creating a symbolic linking from your new theme to the default.python file, be sure to replace the template variables used:
 
 ```
  sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/{{ThemeName}}/{{ThemeName}}.plymouth 100
@@ -67,7 +49,19 @@ sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth d
 
 2. Select the default theme.
 `sudo update-alternatives --config default.plymouth`
-And select the number for your theme (I can't say this for sure but if the theme you want is under 0 for the auto mode, then I would select that as I think it boots in faster than manual)
+If nothing appears, you're done. But if you see a list of themes, select the number for your theme (I can't say this for sure but if the theme you want is under 0 for the auto mode, then I would select that as I think it boots in faster than manual). Be sure to adjust the priority in the command above (100) to something larger than the other themes so auto can take over. Or not, whatever. 
+If you need to search the list of themes, just to be sure, before you commit... use:
+`
+plymouth-set-default-theme -l
+`
+To set the actual theme and automagically re-create the initramfs:
+`
+plymouth-set-default-theme -R laptop
+`
+Edit the defaults file to point to your new theme, incase the above didnt work:
+`
+sudo nano /usr/share/plymouth/plymouthd.defaults
+`
 
 3. Update the initramfs image.
 
@@ -77,7 +71,7 @@ sudo update-initramfs -u
 
 4. Now reboot.
 
-If you want to install this on < Ubuntu 16.04, change the path from /usr/share/plymouth to /lib/plymouth/ . You need to do this on the eionix-cat.plymouth file also.
+If you want to install this on < Ubuntu 16.04, change the path from /usr/share/plymouth to /lib/plymouth/ . You need to do this on the laptop.plymouth file also.
 
 Also other possible perks:
 
@@ -102,6 +96,29 @@ systemctl disable gdm.service
 `
 systemctl enable gdm-plymouth.service
 `
+
+
+
+### Customization
+
+1. Put mp4 into the "input" folder. 
+2. Run the mp4-to-png.sh file for the filename you are using. 
+3. Transfer the image sequence to the root of the project folder.
+4. Open up animated-boot.script and change the lines:
+```
+for (i = 0; i < {{NUMBER OF IMAGES IN SEQUENCE}}; i++)
+  flyingman_image[i] = Image("progress-" + i + ".png");
+flyingman_sprite = Sprite();
+```
+and 
+```
+flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 3) % {{NUMBER OF IMAGES}}]);
+```
+To have the correct number of images in the sequence. 
+
+5. Resave the animated-boot.script file. 
+6. Open up laptop.plymouth and enter in your name, descriptions, and new script paths etc and save as {{ThemeNameHere}}.plymouth
+
 
 
 ### Additional Notes
