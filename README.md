@@ -181,10 +181,10 @@ Mp4 recorded with: https://github.com/NickeManarin/ScreenToGif
 
 Original repo by Eionix: https://github.com/krishnan793/PlymouthTheme-Cat/commits?author=krishnan793
 
-[![Video](https://i.imgur.com/0ReRjOf.gif)](https://www.youtube.com/watch?v=c6f478VBhtE)
-
-[Video] https://www.youtube.com/watch?v=c6f478VBhtE
+[Video Tutorial] https://www.youtube.com/watch?v=c6f478VBhtE
 
 [Blog] http://eionix.blogspot.in/2016/10/plymouth-theme-for-ubuntu.html
 
 And if you want to check out m jcklpe's stuff, visit https://www.jackalope.tech/blog
+
+![Bootscreen with LUKS](https://i.imgur.com/Jvb0puw.png)
