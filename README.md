@@ -64,7 +64,7 @@ plymouth-set-default-theme -l
 
 To set the actual theme and automagically re-create the initramfs:
 `
-plymouth-set-default-theme -R laptop
+plymouth-set-default-theme laptop -R
 `
 
 Edit the defaults file to point to your new theme, incase the above didnt work:
