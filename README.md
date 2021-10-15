@@ -29,7 +29,7 @@ sudo mkdir ./{{ThemeNameHere}}
 cd {{ThemeNameHere}}
 `
 
-3. Clone this repo contents into the folder.
+5. Clone this repo contents into the folder.
 
 `
 sudo git clone https://github.com/MarkFirewhal/Plymouth-Animated-Boot-Screen-Creator.git .
@@ -54,19 +54,24 @@ If nothing appears, you're done.
 But if you see a list of themes, select the number for your theme. 
 Be sure to adjust the priority in the command above (100) to something larger than the other themes so auto can take over. Or not, whatever. 
 
+
 2.5 Double check that theme install.
+
 If you need to search the list of themes, just to be sure, before you commit... use:
 `
 plymouth-set-default-theme -l
 `
+
 To set the actual theme and automagically re-create the initramfs:
 `
 plymouth-set-default-theme -R laptop
 `
+
 Edit the defaults file to point to your new theme, incase the above didnt work:
 `
 sudo nano /usr/share/plymouth/plymouthd.defaults
 `
+
 
 3. Update the initramfs image.
 
