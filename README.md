@@ -90,9 +90,7 @@ NEXT,
 
 Find the line: "GRUB_GFXMODE" = change it to the following: `1024x768` (or whatever your native screen resolution is)
 
-`
-sudo update-grub2
-`
+
 
 (NOTE): if you're having trouble with grub at all, install the GUI: 
 `
