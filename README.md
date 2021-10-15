@@ -95,6 +95,7 @@ AND,
 If you want to be really cool, remove the 5 second flash of Grub: 
 
 `GRUB_DEFAULT` = 0      (auto boots first entry by default)
+
 `GRUB_TIMEOUT` = 0      (doesnt display grub menu)
 
 Then finish the job:
