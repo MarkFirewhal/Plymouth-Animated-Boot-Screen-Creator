@@ -175,6 +175,8 @@ sudo mx-boot-options
 
 ### Credits
 
+Should be available in the official store: https://www.pling.com/p/1617281/
+
 Mp4 recorded with: https://github.com/NickeManarin/ScreenToGif
 
 Original repo by Eionix: https://github.com/krishnan793/PlymouthTheme-Cat/commits?author=krishnan793
